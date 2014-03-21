@@ -22,7 +22,7 @@ graphite_defaults = custom_defaults['graphite'] || {}
 
 node.default['graphite']['timezone'] = 'America/New_York'
 
-listen_port = graphite_defaults['graphite']['listen_port'] || 8080
+listen_port = graphite_defaults['listen_port'] || 8080
 node.default['apache']['listen_ports'] = [80, listen_port]
 
 node.default['graphite']['listen_port'] = listen_port
