@@ -22,9 +22,10 @@ graphite_defaults = custom_defaults['graphite'] || {}
 
 node.default['graphite']['timezone'] = 'America/New_York'
 
-node.default['apache']['listen_ports'] = [80, 81]
+listen_port = graphite_defaults['graphite']['listen_port'] || 8080
+node.default['apache']['listen_ports'] = [80, listen_port]
 
-node.default['graphite']['listen_port'] = 81
+node.default['graphite']['listen_port'] = listen_port
 node.default['graphite']['carbon']['line_receiver_port'] = graphite_defaults['port'] || 2003
 
 node.default['graphite']['apache']['basic_auth']['user'] = graphite_defaults['dashboard_user']
